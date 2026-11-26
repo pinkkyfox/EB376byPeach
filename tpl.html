@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EB376 Final · ติวบท 6–9</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet study booklet, black ink on white
+   IDEA: a printed exam workbook — numbered topics, worked example in the margin, try-it box
+   PICTURE: big outlined chapter numerals; each topic opens with a black-and-white diagram
+   COLOUR and TYPE: white / near-black / one grey; IBM Plex Sans Thai, Plex Mono for numbers
+   LAYOUT: sticky chapter tabs; each topic = diagram, then formula | example, then try-it */
+:root{color-scheme:light dark;--bg:light-dark(#fff,#0f0f0f);--ink:light-dark(#111,#ececec);--mute:light-dark(#6b6b6b,#9d9d9d);--line:light-dark(#e2e2e2,#2b2b2b);--soft:light-dark(#f4f4f4,#1a1a1a);--inv:light-dark(#fff,#111)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "IBM Plex Sans Thai",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1.5px solid var(--ink)}
+.bar{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:8px max(4vw,14px)}
+.brand{font-weight:700;text-decoration:none;white-space:nowrap}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs a{flex:none;text-decoration:none;padding:8px 14px;border-radius:999px;font-size:15px;border:1px solid transparent;color:var(--mute);min-height:40px;display:flex;align-items:center}
+nav.tabs a:hover{color:var(--ink);border-color:var(--line)}
+nav.tabs a.on{background:var(--ink);color:var(--inv)}
+main{max-width:1180px;margin:0 auto;padding:clamp(20px,4vw,48px) max(4vw,14px) 80px}
+.view{display:none}.view.on{display:block}
+h1{font-size:clamp(30px,4.6vw,48px);line-height:1.08;margin:0;text-wrap:balance}
+.big{font-family:"IBM Plex Mono",monospace;font-weight:600;line-height:.85;color:transparent;-webkit-text-stroke:2px var(--ink)}
+/* home */
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.hero p{color:var(--mute);margin:10px 0 0;max-width:56ch;font-size:17px}
+.hero .big{font-size:clamp(70px,12vw,150px);letter-spacing:-.04em;white-space:nowrap}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
+.facts span{border:1px solid var(--ink);border-radius:999px;padding:4px 14px;font-size:14px}
+.hg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.hc{border:1.5px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .15s}
+.hc:hover{border-color:var(--ink)}
+.hc .big{font-size:64px}.hc b{font-size:17px;line-height:1.3}.hc p{margin:0;color:var(--mute);font-size:14px}
+.hc ol{margin:6px 0 0;padding-left:20px;font-size:14px;color:var(--mute)}
+.how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;margin-top:28px}
+.how div{padding:14px 16px;border-right:1px solid var(--line)}.how div:last-child{border-right:0}
+.how b{display:block}.how span{font-size:14px;color:var(--mute)}
+/* chapter */
+.chead{display:flex;gap:20px;align-items:center;margin-bottom:18px}
+.chead .big{font-size:clamp(70px,10vw,110px)}
+.chead p{margin:6px 0 0;color:var(--mute);font-size:17px}
+.toc{display:flex;gap:6px;overflow-x:auto;padding:10px 0 14px;position:sticky;top:58px;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.toc a{flex:none;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:14px;display:flex;gap:8px;align-items:center;min-height:40px}
+.toc a:hover{border-color:var(--ink)}
+.toc a span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px}
+.tp{padding:34px 0 10px;border-bottom:1px solid var(--line)}
+.th{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.tn{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px;background:var(--ink);color:var(--inv);border-radius:8px;padding:5px 10px;margin-top:4px;white-space:nowrap}
+.th h3{font-size:26px;line-height:1.2;margin:0}.th p{margin:2px 0 0;color:var(--mute)}
+.info{border:1.5px solid var(--ink);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.cap{margin:0;font-size:14px;color:var(--mute);text-align:center}
+.flow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}
+.fb{flex:1 1 120px;border:1.5px solid var(--ink);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:2px}
+.fb b{font-size:15px}.fb span{font-size:13px;color:var(--mute)}
+.fb:last-child{background:var(--ink);color:var(--inv)}.fb:last-child span{color:var(--inv);opacity:.75}
+.fa{display:flex;align-items:center;font-weight:700;color:var(--mute)}
+.cg{display:grid;gap:10px}.c3{grid-template-columns:repeat(3,minmax(0,1fr))}.c4{grid-template-columns:repeat(4,minmax(0,1fr))}.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.cd{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.ct{font-weight:700;font-size:15px}.cb{font-size:14px;color:var(--mute)}.cn{margin-top:auto;font-family:"IBM Plex Mono",monospace;font-size:13px;border-top:1px dashed var(--line);padding-top:6px}
+.eq{text-align:center;font-weight:600;font-size:17px;padding:10px 14px;background:var(--soft);border-radius:10px}
+.vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch}
+.vs>div:not(.vsx){border:1px solid var(--line);border-radius:10px;padding:12px}
+.vsx{align-self:center;font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--mute)}
+.bars{display:flex;flex-direction:column;gap:5px}
+.br{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:14px}
+.bt{height:16px;border-radius:3px;background:var(--soft)}.bt div{height:100%;border-radius:3px}
+.br.p .bt div{background:var(--ink)}.br.c .bt div{background:transparent;border:1.5px dashed var(--mute)}
+.br.p .bl{font-weight:600}.br.c .bl{color:var(--mute)}
+.bv{font-family:"IBM Plex Mono",monospace;text-align:right}
+.bmc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto auto;gap:6px}
+.bk{border:1px solid var(--line);border-radius:8px;padding:9px;display:flex;flex-direction:column;gap:2px;font-size:13px}
+.bk b{font-size:13.5px}.bk span{color:var(--mute)}
+.kp{grid-column:1;grid-row:1/3}.ka{grid-column:2;grid-row:1}.kr{grid-column:2;grid-row:2}.vp{grid-column:3;grid-row:1/3;border-color:var(--ink)}.cr{grid-column:4;grid-row:1}.ch{grid-column:4;grid-row:2}.cs{grid-column:5;grid-row:1/3}
+.cost{grid-column:1/3;grid-row:3}.rev{grid-column:3/6;grid-row:3}
+.ff{display:grid;grid-template-columns:1fr 1.2fr 1fr;grid-template-rows:auto auto auto;gap:8px;text-align:center}
+.ff>div{border:1px solid var(--line);border-radius:10px;padding:10px;font-weight:700;font-size:14px;display:flex;flex-direction:column;justify-content:center}
+.ff span{font-weight:400;color:var(--mute);font-size:13px}
+.fc{grid-column:2;grid-row:2;border:2px solid var(--ink)!important;background:var(--soft)}
+.fo.n{grid-column:2;grid-row:1}.fo.w{grid-column:1;grid-row:2}.fo.e{grid-column:3;grid-row:2}.fo.s{grid-column:2;grid-row:3}
+.chain div{padding:4px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--mute);border-bottom:1.5px solid var(--ink)}
+.scroll{overflow-x:auto}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:14px}
+.box{border:1px solid var(--line);border-radius:14px;padding:16px}
+.bh{font-size:13px;font-weight:700;letter-spacing:.02em;display:inline-block;border:1px solid var(--ink);border-radius:999px;padding:1px 10px;margin-bottom:10px}
+.ft td:first-child{font-weight:600;width:42%}
+.ft td:last-child{font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-size:14px}
+.given{margin:0 0 6px;font-size:14px;color:var(--mute)}
+.st,.sol{list-style:none;margin:0;padding:0;counter-reset:s}
+.st li,.sol li{counter-increment:s;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:4px 10px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
+.st li::before,.sol li::before{content:counter(s);width:20px;height:20px;border:1px solid var(--ink);border-radius:50%;font:600 11px/18px "IBM Plex Mono";text-align:center;grid-row:1/3}
+.sl{font-weight:600;font-size:14.5px}
+.sw{grid-column:2;font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-size:13.5px;color:var(--mute)}
+.sa{grid-column:3;grid-row:1/3;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px;align-self:center;white-space:nowrap}
+.try{margin:14px 0 20px;background:var(--soft);border-color:var(--soft)}
+.qq{margin:0 0 10px;font-weight:500}
+.qs+.qs,.qz+.qz{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-size:15px;min-height:44px;padding:8px 16px;border-radius:9px;border:1px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+button.pri{background:var(--ink);color:var(--inv)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.sol{margin-top:8px}.sol li{display:none}.sol li.on{display:grid}
+.ans:empty{display:none!important}.ans{display:none;margin:8px 0 0;padding:8px 12px;border-left:3px solid var(--ink);background:var(--bg);font-weight:600;border-radius:0 8px 8px 0}.ans.on{display:block}
+.op{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.op button{text-align:left;background:var(--bg);border-color:var(--line)}
+.op button.ok{background:var(--ink);color:var(--inv);border-color:var(--ink)}
+.op button.no{text-decoration:line-through;color:var(--mute)}
+.ex2{display:none;margin:10px 0 0;font-size:15px}.ex2.on{display:block}
+.gv{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.gv>b{display:block;font-size:13px;margin-bottom:4px}
+.gl{margin:8px 0 2px;font-size:13px;color:var(--mute)}
+.gt{width:auto;min-width:60%}.gt td,.gt th{font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-size:14px;padding:5px 12px;text-align:right}.gt td:first-child,.gt th:first-child{text-align:left}
+.ni{list-style:none;margin:0 0 12px;padding:0;counter-reset:n}
+.ni li{counter-increment:n;display:grid;grid-template-columns:minmax(0,1fr) 190px 36px;gap:4px 12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.ip::before{content:counter(n) ". ";font-family:"IBM Plex Mono";font-weight:600}
+.ip{font-weight:500}
+.iw{display:flex;align-items:center;gap:6px}.iw em{font-style:normal;color:var(--mute);font-size:14px;min-width:28px}
+.iw input{font:16px "IBM Plex Mono",monospace;width:100%;min-height:42px;padding:6px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-align:right}
+.iw input:focus{outline:none;border-color:var(--ink)}
+.mk{font-weight:700;font-size:18px;text-align:center}
+.hw{grid-column:1/-1;display:none;font-family:"IBM Plex Mono","IBM Plex Sans Thai",monospace;font-size:14px;color:var(--mute);padding-left:18px}
+.ni li.ok input{border-color:var(--ink);background:var(--soft)}.ni li.no input{border-style:dashed;border-color:var(--ink)}
+.ni li.ok .hw,.ni li.no .hw,.ni li.sh .hw{display:block}
+.sc{align-self:center;font-family:"IBM Plex Mono";font-weight:600;margin-left:6px}
+@media(max-width:600px){.ni li{grid-template-columns:minmax(0,1fr) 36px}.iw{grid-column:1;grid-row:2}.mk{grid-row:2}.gt{min-width:100%}}
+.pq{border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.pqh{display:flex;gap:12px;align-items:baseline;margin-bottom:8px}.pqh p{margin:0;font-weight:600}
+details.data{border:1.5px solid var(--ink);border-radius:12px;padding:6px 14px;margin:6px 0 10px}
+details.data summary{cursor:pointer;font-weight:700;min-height:40px;display:flex;align-items:center}
+details.data .gt{margin:6px 0;min-width:0;width:100%}
+.wq{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.wq textarea{width:100%;font:15px "IBM Plex Sans Thai",sans-serif;padding:10px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);margin-bottom:8px}
+.wq textarea:focus{outline:none;border-color:var(--ink)}
+.set{display:none}.set.on{display:block}
+.sets{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 6px}
+.sets button.on{background:var(--ink);color:var(--inv)}
+.qz.pm{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.op button{white-space:normal;line-height:1.45}
+#cf{position:fixed;right:18px;bottom:18px;z-index:30;width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--inv);border:0;font:600 22px "IBM Plex Mono",monospace;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+#calc{position:fixed;right:18px;bottom:86px;z-index:31;width:min(296px,calc(100vw - 24px));background:var(--bg);border:1.5px solid var(--ink);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.22);display:none;user-select:none}
+#calc.on{display:block}
+body:not([data-v=practice]) #cf,body:not([data-v=practice]) #calc{display:none}
+#calc .ch{display:flex;justify-content:space-between;align-items:center;padding:6px 8px 6px 12px;border-bottom:1px solid var(--line);cursor:move;touch-action:none;font-size:13px;color:var(--mute)}
+#calc .ch button{border:0;background:none;color:var(--ink);font-size:18px;width:32px;height:32px;cursor:pointer}
+#calc .cd{padding:8px 12px 10px}
+#calc .hi{font:13px "IBM Plex Mono",monospace;color:var(--mute);min-height:18px;text-align:right;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#calc input{width:100%;box-sizing:border-box;border:0;background:var(--soft);border-radius:8px;padding:8px 10px;font:600 20px "IBM Plex Mono",monospace;text-align:right;color:var(--ink);user-select:text}
+#calc .r2{font:12px "IBM Plex Mono",monospace;color:var(--mute);text-align:right;min-height:16px;margin-top:4px}
+#calc .ck{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0 12px 12px}
+#calc .ck button{height:40px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;font:500 16px "IBM Plex Mono",monospace;cursor:pointer;padding:0}
+#calc .ck button:hover{border-color:var(--ink)}
+#calc .ck .op2{background:var(--soft)}
+#calc .ck .eq{background:var(--ink);color:var(--inv);grid-column:span 2}
+#calc .ck .z{grid-column:span 2}
+#calc .put{margin:0 12px 12px;width:calc(100% - 24px);height:36px;border:1.5px solid var(--ink);background:none;color:var(--ink);border-radius:8px;font:500 14px "IBM Plex Sans Thai",sans-serif;cursor:pointer}
+#calc .put:disabled{opacity:.35;cursor:default}
+footer{max-width:1180px;margin:0 auto;padding:18px max(4vw,14px);font-size:13px;color:var(--mute);border-top:1px solid var(--line)}
+@media(max-width:900px){.hg{grid-template-columns:repeat(2,minmax(0,1fr))}.c4,.c5{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:repeat(2,minmax(0,1fr))}.how div:nth-child(2){border-right:0}.how div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.hero{flex-direction:column-reverse;align-items:flex-start}.hg,.c3{grid-template-columns:minmax(0,1fr)}.op{grid-template-columns:minmax(0,1fr)}.fa{transform:rotate(90deg);justify-content:center;width:100%}.flow{flex-direction:column}.fb{flex:none}.br{grid-template-columns:110px minmax(0,1fr) 54px;font-size:13px}.bmc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.bmc .bk{grid-column:auto!important;grid-row:auto!important}.bmc .vp{grid-column:1/3!important}.ff{grid-template-columns:minmax(0,1fr)}.ff>div{grid-column:1!important;grid-row:auto!important}.brand{display:none}.vs{grid-template-columns:minmax(0,1fr)}.vsx{text-align:center}.th h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="#home">EB376 Final</a>
+<nav class="tabs" id="tabs"><a href="#home">หน้าแรก</a><a href="#ch6">บท 6</a><a href="#ch7">บท 7</a><a href="#ch8">บท 8</a><a href="#ch9">บท 9</a><a href="#practice">Practice</a></nav></div></header>
+<main>
+<div class="view" id="v-home">
+ <div class="hero"><div><h1>ติว EB376 Final</h1><p>Financial Literacy and Value Investments · อธิบายภาษาไทย ใช้ keyword ภาษาอังกฤษ เพราะข้อสอบเป็นภาษาอังกฤษ</p></div><div class="big" aria-hidden="true">6789</div></div>
+ <div class="facts"><span>Open book · ชีท A4 หน้า-หลัง</span><span>เครื่องคิดเลข · ตอบ 2 ทศนิยม</span><span>ห้ามปัดกลางทาง</span><span>คำนวณ · ข้อเขียน · ปรนัย</span></div>
+ <div class="hg">__HOME__</div>
+ <div class="how"><div><b>① เนื้อหา</b><span>Infographic สั้น ๆ</span></div><div><b>② สูตร</b><span>ของหัวข้อนั้น</span></div><div><b>③ ตัวอย่าง</b><span>ตัวเลขง่าย ทีละขั้น</span></div><div><b>④ ลองทำ</b><span>เปิดเฉลยทีละขั้น</span></div></div>
+</div>
+__CHAPTERS__
+</main>
+<footer>สรุปจากสไลด์ Lecture 9–11, 13 และ Final Exam Practice · ตัวอย่างและโจทย์ลองทำส่วนใหญ่เป็นตัวเลขสมมติเพื่อฝึกวิธีคิด · โจทย์ที่ระบุว่า Practice ใช้ตัวเลขจากข้อสอบจริง</footer>
+<button id="cf" aria-label="เครื่องคิดเลข" title="เครื่องคิดเลข">=</button>
+<div id="calc" role="dialog" aria-label="เครื่องคิดเลข"><div class="ch"><span>เครื่องคิดเลข · ลากเพื่อย้าย</span><button data-x aria-label="ปิด">×</button></div>
+<div class="cd"><div class="hi"></div><input id="cin" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0"><div class="r2"></div></div>
+<div class="ck"><button data-k="C" class="op2">C</button><button data-k="(" class="op2">(</button><button data-k=")" class="op2">)</button><button data-k="⌫" class="op2">⌫</button><button data-k="÷" class="op2">÷</button><button data-k="7" class="">7</button><button data-k="8" class="">8</button><button data-k="9" class="">9</button><button data-k="^" class="op2">^</button><button data-k="×" class="op2">×</button><button data-k="4" class="">4</button><button data-k="5" class="">5</button><button data-k="6" class="">6</button><button data-k="Ans" class="op2">Ans</button><button data-k="−" class="op2">−</button><button data-k="1" class="">1</button><button data-k="2" class="">2</button><button data-k="3" class="">3</button><button data-k="." class="">.</button><button data-k="+" class="op2">+</button><button data-k="0" class="z">0</button><button data-k="±" class="op2">±</button><button data-k="=" class="eq">=</button></div><button class="put" disabled>ใส่ผลลัพธ์ลงช่องคำตอบล่าสุด</button></div>
+<script>
+{
+const $ = s => document.querySelector(s);
+function pickSet(i) { document.querySelectorAll('#v-practice .set').forEach(s => s.classList.toggle('on', +s.dataset.s === i)); document.querySelectorAll('#sets button').forEach(b => b.classList.toggle('on', +b.dataset.set === i)); }
+const V = ['home', 'ch6', 'ch7', 'ch8', 'ch9', 'practice'];
+let cur = 'home';
+function show(v) {
+  cur = v; document.body.dataset.v = v;
+  V.forEach(x => document.getElementById('v-' + x).classList.toggle('on', x === v));
+  document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + v));
+}
+function route() {
+  const h = location.hash.slice(1);
+  if (V.includes(h)) { show(h); window.scrollTo(0, 0); return; }
+  if (/^s\d-/.test(h)) { show('practice'); pickSet(+h[1] - 1); document.getElementById(h)?.scrollIntoView(); return; }
+  const m = h.match(/^c(\d)-/);
+  if (m) { show('ch' + m[1]); document.getElementById(h)?.scrollIntoView(); return; }
+  show('home');
+}
+window.addEventListener('hashchange', route);
+route();
+document.addEventListener('click', ev => {
+  const n = ev.target.closest('[data-next]'), a = ev.target.closest('[data-all]');
+  if (n || a) {
+    const id = (n || a).dataset.next || (n || a).dataset.all, ol = document.getElementById(id), lis = [...ol.children];
+    if (a) lis.forEach(l => l.classList.add('on'));
+    else { const nx = lis.find(l => !l.classList.contains('on')); if (nx) nx.classList.add('on'); }
+    if (lis.every(l => l.classList.contains('on'))) document.getElementById(id + 'a').classList.add('on');
+    return;
+  }
+  const b = ev.target.closest('.op button');
+  if (b) {
+    const box = b.closest('.qz'), ans = +box.dataset.a, bs = [...box.querySelectorAll('.op button')], i = bs.indexOf(b);
+    if (box.dataset.done) return; box.dataset.done = 1;
+    bs.forEach((x, k) => { x.classList.toggle('ok', k === ans); x.classList.toggle('no', k === i && i !== ans); });
+    const p = box.querySelector('.ex2'); p.textContent = (i === ans ? 'ถูกต้อง · ' : 'ยังไม่ใช่ · ') + p.textContent; p.classList.add('on');
+  }
+});
+
+const parse = s => { s = String(s).replace(/[,\s%x×]/gi, '').replace('−', '-').replace(/^\((.*)\)$/, '-$1'); return s === '' ? NaN : Number(s); };
+function check(box, reveal) {
+  let ok = 0, n = 0;
+  box.querySelectorAll('.ni li').forEach(li => {
+    n++; const a = +li.dataset.ans, dp = +li.dataset.dp, v = parse(li.querySelector('input').value), tol = Math.pow(10, -dp) * 1.01 + Math.abs(a) * 1e-6;
+    li.classList.remove('ok', 'no', 'sh');
+    const good = isFinite(v) && Math.abs(v - a) <= tol;
+    if (good) { ok++; li.classList.add('ok'); li.querySelector('.mk').textContent = '✓'; }
+    else if (reveal || isFinite(v)) { li.classList.add(isFinite(v) ? 'no' : 'sh'); li.querySelector('.mk').textContent = isFinite(v) ? '✗' : ''; }
+    else li.querySelector('.mk').textContent = '';
+  });
+  box.querySelector('.sc').textContent = `ถูก ${ok} / ${n}`;
+  if (ok === n || reveal) box.querySelector('.ans').classList.add('on');
+}
+document.addEventListener('click', ev => {
+  const st = ev.target.closest('[data-set]'); if (st) { pickSet(+st.dataset.set); document.getElementById('sets').scrollIntoView(); return; }
+  const b = ev.target.closest('[data-chk],[data-show],[data-reset]'); if (!b) return;
+  const box = b.closest('.nq');
+  if (b.hasAttribute('data-chk')) check(box, false);
+  else if (b.hasAttribute('data-show')) check(box, true);
+  else { box.querySelectorAll('.ni li').forEach(li => { li.className = ''; li.querySelector('input').value = ''; li.querySelector('.mk').textContent = ''; }); box.querySelector('.sc').textContent = ''; box.querySelector('.ans').classList.remove('on'); }
+});
+document.addEventListener('keydown', ev => { if (ev.key === 'Enter' && ev.target.matches('.ni input')) check(ev.target.closest('.nq'), false); });
+}
+
+{
+const C = document.getElementById('calc'), I = document.getElementById('cin'), H = C.querySelector('.hi'), R = C.querySelector('.r2'), P = C.querySelector('.put');
+let ans = 0, last = null, done = false;
+const fmt = x => { if (!isFinite(x)) return 'Error'; const s = (+x.toPrecision(12)).toString(); return s; };
+function ev() {
+  const raw = I.value.trim(); if (!raw) return;
+  let e = raw.replace(/,/g, '').replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-').replace(/Ans/g, '(' + ans + ')').replace(/\^/g, '**');
+  if (!/^[\d+\-*/().\se]*$/.test(e)) { R.textContent = 'ใส่ได้แค่ตัวเลขและ + − × ÷ ^ ( )'; return; }
+  let v; try { v = Function('"use strict";return (' + e + ')')(); } catch (_) { R.textContent = 'สูตรไม่ครบ'; return; }
+  if (typeof v !== 'number' || !isFinite(v)) { R.textContent = 'คำนวณไม่ได้'; return; }
+  H.textContent = raw + ' ='; ans = v; I.value = fmt(v); done = true;
+  R.textContent = '2 ทศนิยม: ' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function key(k) {
+  if (k === '=') return ev();
+  if (k === 'C') { I.value = ''; H.textContent = ''; R.textContent = ''; done = false; return; }
+  if (k === '⌫') { I.value = I.value.slice(0, -1); done = false; return; }
+  if (k === '±') { I.value = I.value ? (I.value.startsWith('-(') && I.value.endsWith(')') ? I.value.slice(2, -1) : '-(' + I.value + ')') : '-'; done = false; return; }
+  if (done && /[\d.(]|Ans/.test(k)) I.value = '';
+  done = false; I.value += k;
+}
+document.getElementById('cf').onclick = () => { C.classList.toggle('on'); if (C.classList.contains('on') && matchMedia('(pointer:fine)').matches) I.focus(); };
+C.querySelector('[data-x]').onclick = () => C.classList.remove('on');
+C.querySelector('.ck').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) key(b.dataset.k); });
+I.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === '=') { e.preventDefault(); ev(); } else if (e.key === 'Escape') C.classList.remove('on'); else if (done && /^[\d.(]$/.test(e.key)) { I.value = ''; done = false; } else done = false; });
+document.addEventListener('focusin', e => { if (e.target.matches('#v-practice .nq input')) { last = e.target; P.disabled = false; } });
+P.onclick = () => { if (!last) return; const v = parseFloat(I.value); if (isNaN(v)) return; last.value = v.toFixed(+(last.closest('li').dataset.dp || 2)); last.dispatchEvent(new Event('input', { bubbles: true })); last.scrollIntoView({ block: 'center', behavior: 'smooth' }); };
+const hd = C.querySelector('.ch'); let d = null;
+hd.addEventListener('pointerdown', e => { if (e.target.closest('button')) return; const r = C.getBoundingClientRect(); d = [e.clientX - r.left, e.clientY - r.top]; hd.setPointerCapture(e.pointerId); });
+hd.addEventListener('pointermove', e => { if (!d) return; const x = Math.max(0, Math.min(innerWidth - C.offsetWidth, e.clientX - d[0])), y = Math.max(0, Math.min(innerHeight - C.offsetHeight, e.clientY - d[1])); Object.assign(C.style, { left: x + 'px', top: y + 'px', right: 'auto', bottom: 'auto' }); });
+hd.addEventListener('pointerup', () => d = null);
+}
+</script>
+</body>
+</html>
